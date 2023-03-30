@@ -1,7 +1,6 @@
 def get_tweets(keyword=None, hashtag=None, lang=None):
     # import package
     import tweepy   # extract tweets from Twitter
-    import pandas as pd   # make dataframe, export csv
 
     # set credentials
     consumer_key = "q1BwFxmCRcLt21Wwx33zXqQVR"   # same as api key
@@ -47,7 +46,6 @@ def get_text(keyword=None, hashtag=None, lang=None):
 
 # TODO: rename "title" to "content"
 def get_text_w_title(keyword=None, hashtag=None, lang=None):
-    from random import randint
     import fugashi
     """ tweets = get_tweets(keyword, hashtag, lang)
 
@@ -124,6 +122,8 @@ def get_text_w_title(keyword=None, hashtag=None, lang=None):
 
 
 def get_refined_tweet_list(keyword=None, hashtag=None):
+    import pandas as pd   # make dataframe, export csv
+    
     tweets = get_tweets(keyword, hashtag)
 
     refined_tweet_list = list()

@@ -119,9 +119,7 @@ def tweet_list_published(request):
         tweets_serializers = TweetSerializers(tweets, many=True)
         return JsonResponse(tweets_serializers.data, safe=False) """
 
-# v1
-
-
+# v1 api for getTweetByTerm
 @api_view(['GET', 'POST', 'DELETE'])
 def tweet_list_v1(request):
     # GET list of tweets, POST a new tweet, DELETE all tweets
@@ -177,23 +175,6 @@ def tweet_list_v1(request):
         # print(f'getattr(tweets, "data") = {getattr(tweets, "data")}')
         return JsonResponse(tweets_serializers.data, safe=False)
         # 'safe=False' for objects serialization
-
-    # # create a new object
-    # # create and save a new Tweet
-    # elif request.method == 'POST':
-    #     tweet_data = JSONParser().parse(request)
-    #     tweet_serializer = TweetSerializers(data=tweet_data)
-    #     if (tweet_serializer.is_valid()):
-    #         tweet_serializer.save()
-    #         return JsonResponse(tweet_serializer.data, status=status.HTTP_201_CREATED)
-    #     return JsonResponse(tweet_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    # # delete all objects
-    # # delete all Tweets from database
-    # elif request.method == 'DELETE':
-    #     count = Tweet.objects.all().delete()
-    #     print(f"count = {count}")   # DEBUG
-    #     return JsonResponse({'message': '{} Tweets were deleted successfully!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
 
 
 # _v1 Reusable / small function(s)
