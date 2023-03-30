@@ -31,15 +31,7 @@ def tweet_list(request):
     # create a new object
     # create and save a new Tweet
     elif request.method == 'POST':
-        # request.data = "{'key1': 1, 'key2': 2, 'key3': 3}"
-        data = get_tweet_text(None, "アンスタ", "ja")
-
         tweet_data = JSONParser().parse(request)
-        print(f"tweet_data = {tweet_data}")
-        tweet_data["data"] = data
-        print(f"tweet_data = {tweet_data}")
-        # setattr(tweet_data, "data", "{'key1': 1, 'key2': 2, 'key3': 3}")
-
         tweet_serializer = TweetSerializers(data=tweet_data)
         if (tweet_serializer.is_valid()):
             tweet_serializer.save()
@@ -125,11 +117,3 @@ def tweet_list_published(request):
     if request.method == 'GET':
         tweets_serializers = TweetSerializers(tweets, many=True)
         return JsonResponse(tweets_serializers.data, safe=False) """
-
-
-# Reusable / small function(s)
-def get_tweet_text(keyword=None, hashtag=None, lang=None):   # hashtag=アンスタ
-
-    from packages.twitter_text import get_text_w_title
-    text = get_text_w_title(keyword, hashtag, lang)
-    return text
