@@ -6,4 +6,5 @@ urlpatterns = [
     re_path(r'^api/tweets$', views.tweet_list),
     re_path(r'^api/tweets/(?P<pk>[0-9]+)$', views.tweet_detail),
     # re_path(r'^api/tweets/published$', views.tweet_list_published)
+    re_path(r'^api/v1/tweets$', views.tweet_list_v1)
 ]
