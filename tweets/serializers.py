@@ -11,8 +11,8 @@ class TweetSerializers(serializers.ModelSerializer):
                   'data')
 
 
-class TweetDataSerializers(serializers.ModelSerializer):
+# class TweetDataSerializers(serializers.ModelSerializer):
 
-    class Meta:
-        model = Tweet
-        fields = ('data')
+#     class Meta:
+#         model = Tweet
+#         fields = ('data')

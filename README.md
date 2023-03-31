@@ -2,6 +2,8 @@
 
 ## Commands used in this project
 
+### Django
+
 - conda activate wordcloud
   - activate conda virtual env
 - django-admin startproject es_project
@@ -16,3 +18,16 @@
   - add into tables of db
 - python manage.py runserver 8080
   - run server
+
+### PostgreSQL
+
+- CREATE DATABASE esdb2;
+  - create database
+- \c esdb2
+  - connect database
+- \dt
+  - list tables (List of relations)
+- \d tweets_tweet
+  - describe tables
+- SELECT \* FROM django_migrations;
+  - show all data in this table
