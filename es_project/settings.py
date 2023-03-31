@@ -62,7 +62,13 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
 #     'http://localhost:8080',
+#     'http://localhost:8081',
 # )
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    # 'file:///Users/zrhun/Desktop/Coding/Word%20Cloud%20from%20Twitter/nodejs_tutorials/d3-cloud/examples/hover/index-data.html'
+]
 
 ROOT_URLCONF = 'es_project.urls'
 
